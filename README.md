@@ -18,3 +18,16 @@
 - [ ] Let's Make a Line Chart
 
 ---
+
+## Part 1: Project Setup
+
+Successfully created a GitHub repository and added the starter files:
+- HTML file
+- CSS file (within a `styles` directory)
+- JavaScript file (within a `scripts` directory)
+
+[**Link to the repository**](https://github.com/cr2007/F20DV-Lab1)
+
+[**Link to the deployed website**](https://cr2007.github.io/F20DV-Lab1/)
+
+---
