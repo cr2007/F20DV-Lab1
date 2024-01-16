@@ -1,0 +1,22 @@
+{
+    "recommendations": [
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "EditorConfig.EditorConfig",
+        "vscode-icons-team.vscode-icons",
+        "aaron-bond.better-comments",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "esbenp.prettier-vscode",
+        "yzhang.markdown-all-in-one",
+        "bierner.github-markdown-preview",
+        // HTML, CSS
+        "ecmel.vscode-html-css",
+        "pranaygp.vscode-css-peek",
+        "Zignd.html-css-class-completion",
+        "formulahendry.auto-rename-tag",
+        // JavaScript
+        "xabikos.JavaScriptSnippets",
+        "ambar.bundle-size",
+        "cssho.vscode-svgviewer" // SVG
+    ]
+}
