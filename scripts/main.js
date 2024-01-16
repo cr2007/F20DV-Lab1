@@ -1,5 +1,7 @@
 'use strict';
 
+console.log(`d3.version: ${d3.version}`);
+
 /***** Bar Chart *****/
 let barContainer = d3.select('div#bar1'); // Select the div with id 'bar1'
 
