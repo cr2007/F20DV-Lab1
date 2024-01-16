@@ -1,0 +1,13 @@
+@import 'vars.css';
+
+h1 {
+    color: var(--main-color);
+}
+
+p.myClass {
+    color: var(--accent-color);
+}
+
+p#myId {
+    color: goldenrod;
+}
