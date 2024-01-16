@@ -18,3 +18,12 @@ let cities = [
     {city: 'Lagos', pop: 8048000, area: 1171, alt: 41},
     {city: 'Ottawa', pop: 1017000, area: 2790, alt: 70},
 ]
+
+let barGroup = barSvg.append('g');
+let bars = barGroup.selectAll('rect')
+    .data(cities, d=>d.city)
+    .join('rect')
+    .attr('x', (d,i)=>i*40+5)
+    .attr('height', d=>d.alt*10)
+    .attr('width', d=>40)
+    .attr('y', d=>500-d.alt*10) // Y coordinate = SVG Height - Bar Height
