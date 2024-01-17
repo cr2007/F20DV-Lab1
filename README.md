@@ -81,9 +81,7 @@ bar1.render(citiesElevation);
 <details>
 <summary><code>barChart.js</code></summary>
 
-```javascript
-export default class BarChart {
-
+<pre><code class="language-javascript">export default class BarChart {
     // Attributes (you can make those private too)
     width; height;    // size
     svg; chart; bars; // selections
@@ -125,20 +123,16 @@ export default class BarChart {
         return this; // to allow chaining
     }
 }
-
-```
-
+</code></pre>
 </details>
 
 <details>
 <summary><code>barchart.css</code></summary>
 
-```css
-svg.barchart {
+<pre><code class="language-css">svg.barchart {
     fill: #3F94D3;
     stroke: #003C71;
     stroke-width: 2px;
 }
-```
-
+</code></pre>
 </details>
