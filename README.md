@@ -21,7 +21,9 @@
 
 ---
 
-## Tutorial 1: Project Setup
+## Tutorial 1: Web Languages
+
+#### Exercise: Project Setup
 
 [Lab 1 - Tutorial 1](https://cr2007.github.io/F20DV-Lab1/lab1_tutorial1.html)
 
@@ -36,7 +38,9 @@ Successfully created a GitHub repository and added the starter files:
 
 ---
 
-## Tutorial 2: Let's Make a Bar Chart
+## Tutorial 2: D3 Selections
+
+### Exercise: Let's Make a Bar Chart
 
 [Lab 1 - Tutorial 2](https://cr2007.github.io/F20DV-Lab1/lab1_tutorial2.html)
 
