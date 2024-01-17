@@ -20,10 +20,13 @@ let cities = [
 ]
 
 let barGroup = barSvg.append('g');
-let bars = barGroup.selectAll('rect')
+let bars = barGroup.selectAll('rect.bar')
     .data(cities, d=>d.city)
     .join('rect')
+    .classed('bar', true)
     .attr('x', (d,i)=>i*40+5)
     .attr('height', d=>d.alt*10)
     .attr('width', d=>40)
     .attr('y', d=>500-d.alt*10) // Y coordinate = SVG Height - Bar Height
+    .style('fill', d=>d.pop<1000000 ? '#BA4A53' : null)
+    .style('stroke', d=>d.pop<1000000 ? '#381619' : null);
