@@ -46,11 +46,14 @@ This results in the bar being cut off at the top of the SVG.
 
 ### Code
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+
 <details>
 <summary><code>main.js</code></summary>
-
-```javascript
-'use strict';
+<pre><code class="language-javascript">'use strict';
 
 import BarChart from './barChart.js';
 
@@ -74,13 +77,11 @@ let bar1 = new BarChart('div#bar1', 800, 500);
 let citiesElevation = cities.map(d => [d.city, d.alt]);
 
 bar1.render(citiesElevation);
-```
-
+</code></pre>
 </details>
 
 <details>
 <summary><code>barChart.js</code></summary>
-
 <pre><code class="language-javascript">export default class BarChart {
     // Attributes (you can make those private too)
     width; height;    // size
@@ -128,7 +129,6 @@ bar1.render(citiesElevation);
 
 <details>
 <summary><code>barchart.css</code></summary>
-
 <pre><code class="language-css">svg.barchart {
     fill: #3F94D3;
     stroke: #003C71;
