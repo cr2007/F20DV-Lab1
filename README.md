@@ -45,7 +45,8 @@ Successfully created a GitHub repository and added the starter files:
 > Inspect the bar associated with the city Ottawa, is there any problems with it? What could be the reason?
 
 There is a problem with the bar associated with the city Ottawa. The bar is not visible because the height of the bar.<br>
-The height for the SVG is set to 500px and the height of the bar is set to 700px. This results in the bar being cut off at the top of the SVG.
+The height for the SVG is set to **500px** and the height of the bar is set to **700px**.<br>
+This results in the bar being cut off at the top of the SVG.
 
 <img width="10%" alt="Image" src="https://github.com/cr2007/F20DV-Lab1/assets/73425927/807aa730-1172-4045-9857-22cc1e44a19a">
 
