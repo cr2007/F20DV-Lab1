@@ -19,9 +19,9 @@
 
 ---
 
-## Part 1: Project Setup
+## Tutorial 1: Project Setup
 
-[Lab 1 - Tutorial 1](https://cr2007.github.io/F20DV-Lab1/lab1_part1.html)
+[Lab 1 - Tutorial 1](https://cr2007.github.io/F20DV-Lab1/lab1_tutorial1.html)
 
 Successfully created a GitHub repository and added the starter files:
 - HTML file
@@ -34,9 +34,9 @@ Successfully created a GitHub repository and added the starter files:
 
 ---
 
-## Part 2: Let's Make a Bar Chart
+## Tutorial 2: Let's Make a Bar Chart
 
-[Lab 1 - Tutorial 2](https://cr2007.github.io/F20DV-Lab1/lab1_part2.html)
+[Lab 1 - Tutorial 2](https://cr2007.github.io/F20DV-Lab1/lab1_tutorial2.html)
 
 > Inspect the bar associated with the city Ottawa, is there any problems with it? What could be the reason?
 
@@ -136,3 +136,5 @@ bar1.render(citiesElevation);
 }
 </code></pre>
 </details>
+
+###
