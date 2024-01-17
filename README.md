@@ -1,5 +1,7 @@
 # F20DV Lab 1
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/cr2007/F20DV-Lab1)
+
 ## Introduction to D3
 
 - **Name:** Chandrashekhar Ramaprasad ([cr2007](mailto:cr2007@hw.ac.uk))
