@@ -1,14 +1,8 @@
 'use strict';
 
+import BarChart from './barChart.js';
+
 console.log(`d3.version: ${d3.version}`);
-
-/***** Bar Chart *****/
-let barContainer = d3.select('div#bar1'); // Select the div with id 'bar1'
-
-let barSvg = barContainer.append('svg')
-    .attr('width', 800)
-    .attr('height', 500)
-    .classed('barchart', true); // Add an svg child element to the div
 
 let cities = [
     {city: 'Edinburgh', pop: 506000, area: 119, alt: 47},
@@ -19,14 +13,12 @@ let cities = [
     {city: 'Ottawa', pop: 1017000, area: 2790, alt: 70},
 ]
 
-let barGroup = barSvg.append('g');
-let bars = barGroup.selectAll('rect.bar')
-    .data(cities, d=>d.city)
-    .join('rect')
-    .classed('bar', true)
-    .attr('x', (d,i)=>i*40+5)
-    .attr('height', d=>d.alt*10)
-    .attr('width', d=>40)
-    .attr('y', d=>500-d.alt*10) // Y coordinate = SVG Height - Bar Height
-    .style('fill', d=>d.pop<1000000 ? '#BA4A53' : null)
-    .style('stroke', d=>d.pop<1000000 ? '#381619' : null);
+let bar1 = new BarChart('div#bar1', 800, 500);
+
+// This line transforms the cities dataset in the generic format
+// that BarChart expects: [[k,v], ...]
+// we will explain it further in the next lab
+
+let citiesElevation = cities.map(d => [d.city, d.alt]);
+
+bar1.render(citiesElevation);
