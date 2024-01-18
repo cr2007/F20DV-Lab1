@@ -10,9 +10,10 @@
                 "vscode-icons-team.vscode-icons",
                 "aaron-bond.better-comments",
                 "VisualStudioExptTeam.vscodeintellicode",
-                "esbenp.prettier-vscode",
+				"tomoki1207.pdf",
                 "yzhang.markdown-all-in-one",
                 "bierner.github-markdown-preview",
+				"ritwickdey.LiveServer",
                 // HTML and CSS
                 "ecmel.vscode-html-css",
                 "pranaygp.vscode-css-peek",
@@ -22,10 +23,12 @@
                 "xabikos.JavaScriptSnippets",
                 "ambar.bundle-size",
                 "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+				"meganrogge.template-string-converter",
                 "cssho.vscode-svgviewer" // SVG
             ],
             "settings": {
-                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.defaultProfile.linux": "zsh"
             }
         }
     },
