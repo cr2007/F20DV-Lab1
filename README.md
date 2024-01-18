@@ -12,8 +12,8 @@
 #### Progress
 ![33.33%](https://progress-bar.dev/33)
 
-- [X] Project Setup
-- [X] Let's Make a Bar Chart
+- [X] [Project Setup](#exercise-project-setup)
+- [X] [Let's Make a Bar Chart](#exercise-lets-make-a-bar-chart)
 - [ ] Scalable Charts
 - [ ] Let's Make a Scatter Plot
 - [ ] Let's Make a Donut Chart
