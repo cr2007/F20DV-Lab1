@@ -1,6 +1,7 @@
 'use strict';
 
 import BarChart from './barChart.js';
+import BubbleChart from './bubbleChart.js';
 
 console.log(`d3.version: ${d3.version}`);
 
@@ -23,3 +24,9 @@ let bar1 = new BarChart('div#bar1', 800, 500);
 let citiesElevation = cities.map(d => [d.city, d.alt]);
 
 bar1.render(citiesElevation);
+
+
+/***** Bubble Chart *****/
+let bubble1 = new BubbleChart('div#bubble1', 400, 800);
+let citiesArea = cities.map(d => [d.city, d.alt]);
+bubble1.render(citiesArea);
