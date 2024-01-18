@@ -13,6 +13,7 @@ let cities = [
     {city: 'Ottawa', pop: 1017000, area: 2790, alt: 70},
 ]
 
+/***** Bar Chart *****/
 let bar1 = new BarChart('div#bar1', 800, 500);
 
 // This line transforms the cities dataset in the generic format
