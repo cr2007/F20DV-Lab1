@@ -36,6 +36,9 @@ Successfully created a GitHub repository and added the starter files:
 ----------------------------------------------------------------------|----------------------------------------------------------------------------|
 
 ---
+<div align="right">
+	<a href="#progress">Back To Top ↥</a>
+</div>
 
 ## Tutorial 2: D3 Selections
 
@@ -141,6 +144,11 @@ bar1.render(citiesElevation);
 }
 </code></pre>
 </details>
+
+---
+<div align="right">
+	<a href="#progress">Back To Top ↥</a>
+</div>
 
 ##  Tutorial 3: D3 Scales and Axes
 
