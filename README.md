@@ -10,7 +10,7 @@
 ---
 
 #### Progress
-![33.33%](https://progress-bar.dev/33)
+![50%](https://progress-bar.dev/50)
 
 - [X] [Project Setup](#exercise-project-setup)
 - [X] [Let's Make a Bar Chart](#exercise-lets-make-a-bar-chart)
