@@ -163,3 +163,8 @@ bar1.render(citiesElevation);
 Includes extra attribute for margins in the Bar Chart constructor.
 
 ### Exercise: Let's Make a Scatter Plot
+
+---
+<div align="right">
+	<a href="#progress">Back To Top ↥</a>
+</div>
