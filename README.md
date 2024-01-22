@@ -14,7 +14,7 @@
 
 - [X] [Project Setup](#exercise-project-setup)
 - [X] [Let's Make a Bar Chart](#exercise-lets-make-a-bar-chart)
-- [ ] Scalable Charts
+- [X] [Scalable Charts](#exercise-scalable-charts)
 - [ ] Let's Make a Scatter Plot
 - [ ] Let's Make a Donut Chart
 - [ ] Let's Make a Line Chart
@@ -143,4 +143,12 @@ bar1.render(citiesElevation);
 </code></pre>
 </details>
 
-###
+##  Tutorial 3: D3 Scales and Axes
+
+[Lab 1 - Tutorial 3](https://cr2007.github.io/F20DV-Lab1/lab1_tutorial3.html)
+
+### Exercise: Scalable Charts
+
+Includes extra attribute for margins in the Bar Chart constructor.
+
+### Exercise: Let's Make a Scatter Plot
