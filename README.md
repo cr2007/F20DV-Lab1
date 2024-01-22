@@ -15,7 +15,7 @@
 - [X] [Project Setup](#exercise-project-setup)
 - [X] [Let's Make a Bar Chart](#exercise-lets-make-a-bar-chart)
 - [X] [Scalable Charts](#exercise-scalable-charts)
-- [ ] Let's Make a Scatter Plot
+- [ ] [Let's Make a Scatter Plot](#exercise-lets-make-a-scatter-plot)
 - [ ] Let's Make a Donut Chart
 - [ ] Let's Make a Line Chart
 
