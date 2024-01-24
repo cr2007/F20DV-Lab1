@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="f20dv-lab-1">F20DV Lab 1</h1>
+<p><a href="https://codespaces.new/cr2007/F20DV-Lab1"><img src="https://github.com/codespaces/badge.svg" alt="Open in GitHub Codespaces"></a></p>
+<h2 id="introduction-to-d3">Introduction to D3</h2>
+<ul>
+<li><strong>Name:</strong> Chandrashekhar Ramaprasad (<a href="mailto:cr2007@hw.ac.uk">cr2007</a>)</li>
+<li><strong>Course:</strong> Data Visualization and Analytics (<a href="https://curriculum.hw.ac.uk/coursedetails/F20DV?termcode=202324"><strong>F20DV</strong></a>)</li>
+</ul>
+<hr>
+<h4 id="progress">Progress</h4>
+<p><img src="https://progress-bar.dev/50" alt="50%"></p>
+<ul>
+<li><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0"></label><a href="#exercise-project-setup">Project Setup</a></li>
+<li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1"></label><a href="#exercise-lets-make-a-bar-chart">Let's Make a Bar Chart</a></li>
+<li><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2"></label><a href="#exercise-scalable-charts">Scalable Charts</a></li>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3"></label><a href="#exercise-lets-make-a-scatter-plot">Let's Make a Scatter Plot</a></li>
+<li><input type="checkbox" id="checkbox4"><label for="checkbox4">Let's Make a Donut Chart</label></li>
+<li><input type="checkbox" id="checkbox5"><label for="checkbox5">Let's Make a Line Chart</label></li>
+</ul>
+<hr>
+<h2 id="tutorial-1-web-languages">Tutorial 1: Web Languages</h2>
+<h4 id="exercise-project-setup">Exercise: Project Setup</h4>
+<p><a href="https://cr2007.github.io/F20DV-Lab1/lab1_tutorial1.html">Lab 1 - Tutorial 1</a></p>
+<p>Successfully created a GitHub repository and added the starter files:</p>
+<ul>
+<li>HTML file</li>
+<li>CSS file (within a <code>styles</code> directory)</li>
+<li>JavaScript file (within a <code>scripts</code> directory)</li>
+</ul>
+<div align="center">
+	<a href="https://github.com/cr2007/F20DV-Lab1"><b>Repository Link</b></a> |
+	<a href="https://cr2007.github.io/F20DV-Lab1"><b>Deployed Website Link</b></a>
+</div>
+<hr>
+<div align="right">
+	<a href="#progress">Back To Top ↥</a>
+</div>
+<h2 id="tutorial-2-d3-selections">Tutorial 2: D3 Selections</h2>
+<h3 id="exercise-lets-make-a-bar-chart">Exercise: Let's Make a Bar Chart</h3>
+<p><a href="https://cr2007.github.io/F20DV-Lab1/lab1_tutorial2.html">Lab 1 - Tutorial 2</a></p>
+<blockquote>
+<p>Inspect the bar associated with the city Ottawa, is there any problems with it? What could be the reason?</p>
+</blockquote>
+<p>There is a problem with the bar associated with the city Ottawa. The bar is not visible because the height of the bar.<br>
+The height for the SVG is set to <strong>500px</strong> and the height of the bar is set to <strong>700px</strong>.<br>
+This results in the bar being cut off at the top of the SVG.</p>
+<h3 id="code">Code</h3>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<details>
+<summary><code>main.js</code></summary>
+<pre><code class="language-javascript">'use strict';
+<p>import BarChart from './barChart.js';</p>
+<p>console.log(<code>d3.version: ${d3.version}</code>);</p>
+<p>let cities = [
+{city: 'Edinburgh', pop: 506000, area: 119, alt: 47},
+{city: 'Dubai', pop: 3604000, area: 1610, alt: 5},
+{city: 'Putrajaya', pop: 109000, area: 49, alt: 38},
+{city: 'Qingdao', pop: 10071000, area: 11228, alt: 25},
+{city: 'Lagos', pop: 8048000, area: 1171, alt: 41},
+{city: 'Ottawa', pop: 1017000, area: 2790, alt: 70},
+]</p>
+<p>let bar1 = new BarChart('div#bar1', 800, 500);</p>
+<p>// This line transforms the cities dataset in the generic format
+// that BarChart expects: [[k,v], ...]
+// we will explain it further in the next lab</p>
+<p>let citiesElevation = cities.map(d =&gt; [d.city, d.alt]);</p>
+<p>bar1.render(citiesElevation);
+</code></pre></p>
+</details>
+<details>
+<summary><code>barChart.js</code></summary>
+<pre><code class="language-javascript">export default class BarChart {
+    // Attributes (you can make those private too)
+    width; height;    // size
+    svg; chart; bars; // selections
+    data;             // internal data
+<pre><code>// Constructor
+constructor(container, width, height) {
+    this.width = width;
+    this.height = height;
+
+    this.svg = d3.select(container).append('svg')
+        .classed('barchart', true)
+        .attr('width', width).attr('height', height);
+    this.chart = this.svg.append('g');
+    this.bars = this.chart.selectAll('rect.bar');
+}
+
+// Private methods
+// data is in the format [[key, value], ...]
+#updateBars() {
+    this.bars = this.bars
+        .data(this.data, d =&gt; d[0])
+        .join('rect')
+        .classed('bar', true)
+        .attr('x', (d, i) =&gt; i*40+5)
+        .attr('y', d =&gt; this.height - d[1]*10)
+        .attr('width', 40)
+        .attr('height', d =&gt; d[1]*10);
+}
+
+// Public API
+
+// The dataset parameter needs to be in a generic format,
+// so that it works for all future data
+// here we assume a [[k, v], ...] format for efficiency
+render(dataset) {
+    this.data = dataset;
+    this.#updateBars();
+    return this; // to allow chaining
+}
+</code></pre>
+<p>}
+</code></pre></p>
+</details>
+<details>
+<summary><code>barchart.css</code></summary>
+<pre><code class="language-css">svg.barchart {
+    fill: #3F94D3;
+    stroke: #003C71;
+    stroke-width: 2px;
+}
+</code></pre>
+</details>
+<hr>
+<div align="right">
+	<a href="#progress">Back To Top ↥</a>
+</div>
+<h2 id="tutorial-3-d3-scales-and-axes">Tutorial 3: D3 Scales and Axes</h2>
+<p><a href="https://cr2007.github.io/F20DV-Lab1/lab1_tutorial3.html">Lab 1 - Tutorial 3</a></p>
+<h3 id="exercise-scalable-charts">Exercise: Scalable Charts</h3>
+<p>Includes extra attribute for margins in the Bar Chart constructor.</p>
+<h3 id="exercise-lets-make-a-scatter-plot">Exercise: Let's Make a Scatter Plot</h3>
+<hr>
+<div align="right">
+	<a href="#progress">Back To Top ↥</a>
+</div>
+
+</body>
+</html>
