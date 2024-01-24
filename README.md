@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # F20DV Lab 1
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/cr2007/F20DV-Lab1)
