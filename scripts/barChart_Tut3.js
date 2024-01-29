@@ -29,6 +29,7 @@ export default class BarChart {
 			.attr("transform", `translate(${this.margin[2]}, ${this.height - this.margin[1]})`);
 		this.axisY = this.svg.append("g").attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
 
+		// Labels
 		this.labelX = this.svg.append("text")
 			.attr("transform", `translate(${this.width / 2}, ${this.height})`)
 			.style("text-anchor", "middle").attr("dy", -5);
