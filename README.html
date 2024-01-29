@@ -374,12 +374,12 @@ code {
 </ul>
 <hr>
 <h4 id="progress">Progress</h4>
-<p><img src="https://progress-bar.dev/50" alt="50%"></p>
+<p><img src="https://progress-bar.dev/66" alt="66%"></p>
 <ul>
 <li><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0"></label><a href="#exercise-project-setup">Project Setup</a></li>
 <li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1"></label><a href="#exercise-lets-make-a-bar-chart">Let's Make a Bar Chart</a></li>
 <li><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2"></label><a href="#exercise-scalable-charts">Scalable Charts</a></li>
-<li><input type="checkbox" id="checkbox3" disabled><label for="checkbox3"></label><a href="#exercise-lets-make-a-scatter-plot">Let's Make a Scatter Plot</a></li>
+<li><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3"></label><a href="#exercise-lets-make-a-scatter-plot">Let's Make a Scatter Plot</a></li>
 <li><input type="checkbox" id="checkbox4" disabled><label for="checkbox4">Let's Make a Donut Chart</label></li>
 <li><input type="checkbox" id="checkbox5" disabled><label for="checkbox5">Let's Make a Line Chart</label></li>
 </ul>
@@ -499,6 +499,130 @@ render(dataset) {
 <h3 id="exercise-scalable-charts">Exercise: Scalable Charts</h3>
 <p>Includes extra attribute for margins in the Bar Chart constructor.</p>
 <h3 id="exercise-lets-make-a-scatter-plot">Exercise: Let's Make a Scatter Plot</h3>
+<details>
+<summary><code>main.js</code></summary>
+<pre><code class="language-javascript">"use strict";
+<pre><code>import BarChart from &quot;./barChart_Tut3.js&quot;;
+import BubbleChart from &quot;./bubbleChart.js&quot;;
+import ScatterPlot from &quot;./scatterPlot.js&quot;;
+
+// ...
+
+/***** Scatter Plot *****/
+let scatter1 = new ScatterPlot(&quot;div#scatter1&quot;, 600, 400, [10, 50, 45, 20]);
+let citiesPop = cities.map((d) =&gt; [d.pop, d.area]);
+scatter1.render(citiesPop);
+</code></pre>
+<p></code></pre></p>
+</details>
+<details>
+<summary><code>main.js</code></summary>
+<pre><code class="language-javascript">export default class ScatterPlot {
+	// Attributes (you can make those private too)
+	width; height; margin; // Size
+	svg; plot; scatters;   // Selections
+	axisX; axisY;          // Axes
+	labelX; labelY;        // Labels
+	scaleX; scaleY;        // Scales
+	data;                  // Internal Data
+<pre><code>// Constructor
+constructor(container, width, height, margin) {
+	this.width = width;
+	this.height = height;
+	this.margin = margin;
+
+	this.svg = d3.select(container).append(&quot;svg&quot;)
+		.classed(&quot;scatterplot&quot;, true)
+		.attr(&quot;width&quot;, width).attr(&quot;height&quot;, height);
+
+	this.plot = this.svg.append(&quot;g&quot;).attr(&quot;transform&quot;, `translate(${this.margin[2]}, ${this.margin[0]})`);
+	this.scatters = this.plot.selectAll(&quot;circle.scatter&quot;);
+
+	// Axes
+	this.axisX = this.svg.append(&quot;g&quot;)
+		.attr(&quot;transform&quot;, `translate(${this.margin[2]}, ${this.height - this.margin[1]})`);
+	this.axisY = this.svg.append(&quot;g&quot;).attr(&quot;transform&quot;, `translate(${this.margin[2]}, ${this.margin[0]})`);
+
+	// Labels
+	this.labelX = this.svg.append(&quot;text&quot;)
+		.attr(&quot;transform&quot;, `translate(${this.width / 2}, ${this.height})`)
+		.style(&quot;text-anchor&quot;, &quot;middle&quot;).attr(&quot;dy&quot;, -5);
+
+	this.labelY = this.svg.append(&quot;text&quot;)
+}
+
+#updateScales() {
+	let plotWidth = this.width - this.margin[2] - this.margin[3],
+		plotHeight = this.height - this.margin[0] - this.margin[1];
+
+	let rangeX = [0, plotWidth],
+		rangeY = [plotHeight, 0];
+
+	let domainX = this.data.map((d) =&gt; d[0]),
+		domainY = [0, d3.max(this.data, (d) =&gt; d[1])];
+
+	this.scaleX = d3.scaleBand(domainX, rangeX).padding(0.2);
+	this.scaleY = d3.scaleLinear(domainY, rangeY).nice();
+}
+
+#updateAxes() {
+	let axisGenX = d3.axisBottom(this.scaleX),
+		axisGenY = d3.axisLeft(this.scaleY);
+
+	this.axisX.call(axisGenX);
+	this.axisY.call(axisGenY);
+}
+
+// Private methods
+// data is in the format [[key, value], ...]
+#updateScatter() {
+	this.scatters = this.scatters
+		.data(this.data, (d) =&gt; d[0])
+		.join(&quot;circle&quot;)
+		.classed(&quot;scatter&quot;, true)
+		.attr(&quot;cx&quot;, (d) =&gt; this.scaleX(d[0]) + this.scaleX.bandwidth() / 2)
+		.attr(&quot;cy&quot;, (d) =&gt; this.height - this.margin[1] - this.scaleY(d[1]))
+		.attr(&quot;r&quot;, 8);
+}
+
+// Public API
+
+// The dataset parameter needs to be in a generic format,
+// so that it works for all future data
+// here we assume a [[k, v], ...] format for efficiency
+render(dataset) {
+	this.data = dataset;
+	this.#updateScales();
+	this.#updateScatter();
+	this.#updateAxes();
+	return this; // to allow chaining
+}
+
+setLabels(labelX = &quot;categories&quot;, labelY = &quot;values&quot;) {
+	this.labelX.text(labelX);
+	this.labelY.text(labelY);
+	return this; // to allow chaining
+}
+</code></pre>
+<p>}
+</code></pre></p>
+</details>
+<details>
+<summary><code>main.js</code></summary>
+<pre><code class="language-javascript">svg.scatterplot {
+	fill: #3F94D3;
+	stroke: #003C71;
+	stroke-width: 2px;
+	border: 1px solid #121212;
+}
+<p>text {
+font-family: sans-serif;
+font-size: 12px;
+fill: #121212;
+stroke: none;
+}
+</code></pre></p>
+</details>
 <hr>
 <div align="right">
 	<a href="#progress">Back To Top ↥</a>
