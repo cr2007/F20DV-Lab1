@@ -1,8 +1,11 @@
 export default class BarChart {
 	// Attributes (you can make those private too)
-	width; height;    // Size
-	svg; chart; bars; // Selections
-	data;             // Internal Data
+	width; height; margin;    // Size
+	svg; chart; bars;         // Selections
+	axisX; axisY;             // Axes
+	labelX; labelY;           // Labels
+	scaleX; scaleY;           // Scales
+	data;                     // Internal Data
 
 	/*
 	- container: DOM selector
@@ -20,7 +23,7 @@ export default class BarChart {
 			.attr("width", width).attr("height", height);
 
 		this.chart = this.svg.append("g")
-			.attr("transform",`translate(${this.margin[2]}, ${this.margin[0]})`);
+			.attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
 
 		this.bars = this.chart.selectAll("rect.bar");
 
@@ -54,11 +57,11 @@ export default class BarChart {
 	}
 
 	#updateAxes() {
-		let axisX = d3.axisBottom(this.scaleX),
-			axisY = d3.axisLeft(this.scaleY);
+		let axisGenX = d3.axisBottom(this.scaleX),
+			axisGenY = d3.axisLeft(this.scaleY);
 
-		this.axisX.call(axisX);
-		this.axisY.call(axisY);
+		this.axisX.call(axisGenX);
+		this.axisY.call(axisGenY);
 	}
 
 	// Private methods
