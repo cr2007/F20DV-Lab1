@@ -2,6 +2,7 @@
 
 import BarChart from "./barChart_Tut3.js";
 import BubbleChart from "./bubbleChart.js";
+import ScatterPlot from "./scatterPlot.js";
 
 console.log(`d3.version: ${d3.version}`);
 
@@ -22,10 +23,15 @@ let bar1 = new BarChart("div#bar1", 700, 500, [10, 40, 45, 20]);
 // we will explain it further in the next lab
 
 let citiesElevation = cities.map((d) => [d.city, d.alt]);
-
 bar1.render(citiesElevation);
 
 /***** Bubble Chart *****/
 let bubble1 = new BubbleChart("div#bubble1", 400, 800);
 let citiesArea = cities.map((d) => [d.city, d.alt]);
 bubble1.render(citiesArea);
+
+
+/***** Scatter Plot *****/
+let scatter1 = new ScatterPlot("div#scatter1", 600, 400, [10, 50, 45, 20]);
+let citiesPop = cities.map((d) => [d.pop, d.area]);
+scatter1.render(citiesPop);

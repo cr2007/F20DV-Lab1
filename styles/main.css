@@ -1,6 +1,7 @@
 @import "vars.css";
 @import "barchart.css";
 @import "bubblechart.css";
+@import "scatterplot.css";
 
 h1 {
     color: var(--main-color);
