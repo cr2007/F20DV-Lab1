@@ -10,10 +10,10 @@
                 "vscode-icons-team.vscode-icons",
                 "aaron-bond.better-comments",
                 "VisualStudioExptTeam.vscodeintellicode",
-				"tomoki1207.pdf",
+                "tomoki1207.pdf",
                 "yzhang.markdown-all-in-one",
                 "bierner.github-markdown-preview",
-				"ritwickdey.LiveServer",
+                "ritwickdey.LiveServer",
                 // HTML and CSS
                 "ecmel.vscode-html-css",
                 "pranaygp.vscode-css-peek",
@@ -24,7 +24,7 @@
                 "ambar.bundle-size",
                 "dbaeumer.vscode-eslint",
                 "esbenp.prettier-vscode",
-				"meganrogge.template-string-converter",
+                "meganrogge.template-string-converter",
                 "cssho.vscode-svgviewer" // SVG
             ],
             "settings": {
@@ -40,7 +40,7 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/common-utils:2":{
+        "ghcr.io/devcontainers/features/common-utils:2": {
             "installZsh": "true",
             "username": "CSK"
         },
@@ -51,6 +51,5 @@
             "version": "latest"
         }
     },
-
     "remoteUser": "CSK"
 }
