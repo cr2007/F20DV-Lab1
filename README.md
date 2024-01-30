@@ -1,10 +1,19 @@
----
-layout: default
----
 
 # F20DV Lab 1
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/cr2007/F20DV-Lab1)
+
+<div align="center">
+	<table>
+		<tr>
+			<td><b><a href="lab1_tutorial1.html">Tutorial 1</a></b></td>
+			<td><b><a href="lab1_tutorial2.html">Tutorial 2</a></b></td>
+			<td><b><a href="lab1_tutorial3.html">Tutorial 3</a></b></td>
+			<td><b><a href="lab1_tutorial4.html">Tutorial 4</a></b></td>
+		</tr>
+	</table>
+</div>
+
 
 ## Introduction to D3
 
