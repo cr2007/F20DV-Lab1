@@ -11,3 +11,16 @@ text {
 	fill: #121212;
 	stroke: none;
 }
+
+@media (prefers-color-scheme: dark) {
+	svg.scatterplot {
+		fill: #52AEFF;
+		stroke: #FBFAF2;
+		stroke-width: 1px;
+		border: 1px solid #FBFAF2;
+	}
+
+	svg.scatterplot text {
+		fill: #FBFAF2;
+	}
+}

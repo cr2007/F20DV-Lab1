@@ -7,3 +7,10 @@
     --font-text: "Open Sans", sans-serif;
     --font-title: "DM Serif Display", serif;
 }
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-color: #eee;
+		--accent-color: #52AEFF;
+	}
+}

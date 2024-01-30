@@ -10,3 +10,15 @@ text {
 	fill: #121212;
 	stroke: none;
 }
+
+@media (prefers-color-scheme: dark) {
+	svg.barchart {
+		fill: #52AEFF;
+		stroke: #FBFAF2;
+		stroke-width: 1px;
+	}
+
+	svg.barchart text {
+		fill: #FBFAF2;
+	}
+}

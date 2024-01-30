@@ -4,3 +4,22 @@ svg.bubblechart {
     stroke-width: 2px;
     border: 1px solid #121212;
 }
+
+text {
+	font-family: sans-serif;
+	font-size: 12px;
+	fill: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+	svg.bubblechart {
+		fill: #52AEFF;
+		stroke: #FBFAF2;
+		stroke-width: 1px;
+		border: 1px solid #FBFAF2;
+	}
+
+	svg.bubblechart text {
+		fill: #FBFAF2;
+	}
+}
