@@ -87,9 +87,9 @@ export default class BubbleChart {
 		return this; // to allow chaining
 	}
 
-	setLabels(xLabel = "categories", yLabel = "values") {
-		this.labelX.text(xLabel);
-		this.labelY.text(yLabel);
+	setLabels(labelX = "categories", labelY = "values") {
+		this.labelX.text(labelX);
+		this.labelY.text(labelY);
 		return this; // to allow chaining
 	}
 }
