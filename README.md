@@ -168,6 +168,11 @@ Includes extra attribute for margins in the Bar Chart constructor.
 
 ### Exercise: Let's Make a Scatter Plot
 
+Creates a Scatter Plot that plots the population against the area.
+
+Repurposes the code used in Bubble Charts and Bar Charts to include Scalability and Axes too.
+
+### Code
 <details>
 <summary><code>main.js</code></summary>
 <pre><code class="language-javascript">"use strict";
