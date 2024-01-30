@@ -59,7 +59,7 @@ Successfully created a GitHub repository and added the starter files:
 
 ## Tutorial 2: D3 Selections
 
-### Exercise: Let's Make a Bar Chart
+#### Exercise: Let's Make a Bar Chart
 
 [Lab 1 - Tutorial 2](https://cr2007.github.io/F20DV-Lab1/lab1_tutorial2.html)
 
@@ -167,15 +167,15 @@ bar1.render(citiesElevation);
 	<a href="#progress">Back To Top ↥</a>
 </div>
 
-##  Tutorial 3: D3 Scales and Axes
+## Tutorial 3: D3 Scales and Axes
 
 [Lab 1 - Tutorial 3](https://cr2007.github.io/F20DV-Lab1/lab1_tutorial3.html)
 
-### Exercise: Scalable Charts
+#### Exercise: Scalable Charts
 
 Includes extra attribute for margins in the Bar Chart constructor.
 
-### Exercise: Let's Make a Scatter Plot
+#### Exercise: Let's Make a Scatter Plot
 
 Creates a Scatter Plot that plots the population against the area.
 
