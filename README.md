@@ -186,7 +186,7 @@ Includes extra attribute for margins in the Bar Chart constructor.
 </details>
 
 <details>
-<summary><code>main.js</code></summary>
+<summary><code>scatterPlot.js</code></summary>
 <pre><code class="language-javascript">export default class ScatterPlot {
 	// Attributes (you can make those private too)
 	width; height; margin; // Size
@@ -279,8 +279,8 @@ Includes extra attribute for margins in the Bar Chart constructor.
 </details>
 
 <details>
-<summary><code>main.js</code></summary>
-<pre><code class="language-javascript">svg.scatterplot {
+<summary><code>scatterplot.css</code></summary>
+<pre><code class="language-css">svg.scatterplot {
 	fill: #3F94D3;
 	stroke: #003C71;
 	stroke-width: 2px;
