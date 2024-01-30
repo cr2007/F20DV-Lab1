@@ -26,7 +26,7 @@ let citiesElevation = cities.map((d) => [d.city, d.alt]);
 bar1.render(citiesElevation);
 
 /***** Bubble Chart *****/
-let bubble1 = new BubbleChart("div#bubble1", 400, 800);
+let bubble1 = new BubbleChart("div#bubble1", 600, 400, [10, 40, 45, 20]);
 let citiesArea = cities.map((d) => [d.city, d.alt]);
 bubble1.render(citiesArea);
 
