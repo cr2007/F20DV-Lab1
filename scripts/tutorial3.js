@@ -1,7 +1,7 @@
 "use strict";
 
 import BarChart from "./barChart_Tut3.js";
-import BubbleChart from "./bubbleChart.js";
+import BubbleChart from "./bubbleChart_tut3.js";
 import ScatterPlot from "./scatterPlot.js";
 
 console.log(`d3.version: ${d3.version}`);
