@@ -16,7 +16,7 @@ let cities = [
 ];
 
 /***** Bar Chart *****/
-let bar1 = new BarChart("div#bar1", 700, 500, [10, 40, 45, 20]);
+let bar1 = new BarChart("div#bar1", 700, 400, [10, 40, 45, 20]);
 
 // This line transforms the cities dataset in the generic format
 // that BarChart expects: [[k,v], ...]
