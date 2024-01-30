@@ -30,7 +30,8 @@ export default class BarChart {
 		// Axes
 		this.axisX = this.svg.append("g")
 			.attr("transform", `translate(${this.margin[2]}, ${this.height - this.margin[1]})`);
-		this.axisY = this.svg.append("g").attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
+		this.axisY = this.svg.append("g")
+			.attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
 
 		// Labels
 		this.labelX = this.svg.append("text")

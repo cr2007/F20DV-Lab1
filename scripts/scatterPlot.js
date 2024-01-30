@@ -17,13 +17,15 @@ export default class ScatterPlot {
 			.classed("scatterplot", true)
 			.attr("width", width).attr("height", height);
 
-		this.plot = this.svg.append("g").attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
+		this.plot = this.svg.append("g")
+			.attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
 		this.scatters = this.plot.selectAll("circle.scatter");
 
 		// Axes
 		this.axisX = this.svg.append("g")
 			.attr("transform", `translate(${this.margin[2]}, ${this.height - this.margin[1]})`);
-		this.axisY = this.svg.append("g").attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
+		this.axisY = this.svg.append("g")
+			.attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
 
 		// Labels
 		this.labelX = this.svg.append("text")
