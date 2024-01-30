@@ -502,21 +502,22 @@ render(dataset) {
 <details>
 <summary><code>main.js</code></summary>
 <pre><code class="language-javascript">"use strict";
-<pre><code>import BarChart from &quot;./barChart_Tut3.js&quot;;
+<p>import BarChart from &quot;./barChart_Tut3.js&quot;;
 import BubbleChart from &quot;./bubbleChart.js&quot;;
-import ScatterPlot from &quot;./scatterPlot.js&quot;;
-
-// ...
-
-/***** Scatter Plot *****/
+import ScatterPlot from &quot;./scatterPlot.js&quot;;</p>
+<p>// ...</p>
+<p>/***** Bubble Chart *****/
+let bubble1 = new BubbleChart(&quot;div#bubble1&quot;, 600, 400, [10, 40, 45, 20]);
+let citiesArea = cities.map((d) =&gt; [d.city, d.alt]);
+bubble1.render(citiesArea);</p>
+<p>/***** Scatter Plot *****/
 let scatter1 = new ScatterPlot(&quot;div#scatter1&quot;, 600, 400, [10, 50, 45, 20]);
 let citiesPop = cities.map((d) =&gt; [d.pop, d.area]);
 scatter1.render(citiesPop);
-</code></pre>
-<p></code></pre></p>
+</code></pre></p>
 </details>
 <details>
-<summary><code>main.js</code></summary>
+<summary><code>scatterPlot.js</code></summary>
 <pre><code class="language-javascript">export default class ScatterPlot {
 	// Attributes (you can make those private too)
 	width; height; margin; // Size
@@ -608,8 +609,8 @@ setLabels(labelX = &quot;categories&quot;, labelY = &quot;values&quot;) {
 </code></pre></p>
 </details>
 <details>
-<summary><code>main.js</code></summary>
-<pre><code class="language-javascript">svg.scatterplot {
+<summary><code>scatterplot.css</code></summary>
+<pre><code class="language-css">svg.scatterplot {
 	fill: #3F94D3;
 	stroke: #003C71;
 	stroke-width: 2px;

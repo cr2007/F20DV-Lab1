@@ -172,16 +172,22 @@ Includes extra attribute for margins in the Bar Chart constructor.
 <summary><code>main.js</code></summary>
 <pre><code class="language-javascript">"use strict";
 
-	import BarChart from "./barChart_Tut3.js";
-	import BubbleChart from "./bubbleChart.js";
-	import ScatterPlot from "./scatterPlot.js";
+import BarChart from "./barChart_Tut3.js";
+import BubbleChart from "./bubbleChart.js";
+import ScatterPlot from "./scatterPlot.js";
 
-	// ...
+// ...
 
-	/***** Scatter Plot *****/
-	let scatter1 = new ScatterPlot("div#scatter1", 600, 400, [10, 50, 45, 20]);
-	let citiesPop = cities.map((d) => [d.pop, d.area]);
-	scatter1.render(citiesPop);
+/***** Bubble Chart *****/
+let bubble1 = new BubbleChart("div#bubble1", 600, 400, [10, 40, 45, 20]);
+let citiesArea = cities.map((d) => [d.city, d.alt]);
+bubble1.render(citiesArea);
+
+
+/***** Scatter Plot *****/
+let scatter1 = new ScatterPlot("div#scatter1", 600, 400, [10, 50, 45, 20]);
+let citiesPop = cities.map((d) => [d.pop, d.area]);
+scatter1.render(citiesPop);
 </code></pre>
 </details>
 
