@@ -1,6 +1,13 @@
 
 # F20DV Lab 1
 
+<table>
+	<tr>
+		<td><b>Lab 1</b></td>
+		<td><b><a href="https://cr2007.github.io/F20DV-Lab2">Lab 2 →</a></b></td>
+	</tr>
+</table>
+
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/cr2007/F20DV-Lab1)
 
 <div align="center">
