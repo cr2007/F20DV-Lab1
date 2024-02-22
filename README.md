@@ -92,12 +92,12 @@ import BarChart from './barChart.js';
 console.log(`d3.version: ${d3.version}`);
 
 let cities = [
-	{city: 'Edinburgh', pop: 506000, area: 119, alt: 47},
-	{city: 'Dubai', pop: 3604000, area: 1610, alt: 5},
-	{city: 'Putrajaya', pop: 109000, area: 49, alt: 38},
-	{city: 'Qingdao', pop: 10071000, area: 11228, alt: 25},
-	{city: 'Lagos', pop: 8048000, area: 1171, alt: 41},
-	{city: 'Ottawa', pop: 1017000, area: 2790, alt: 70},
+    {city: 'Edinburgh', pop: 506000, area: 119, alt: 47},
+    {city: 'Dubai', pop: 3604000, area: 1610, alt: 5},
+    {city: 'Putrajaya', pop: 109000, area: 49, alt: 38},
+    {city: 'Qingdao', pop: 10071000, area: 11228, alt: 25},
+    {city: 'Lagos', pop: 8048000, area: 1171, alt: 41},
+    {city: 'Ottawa', pop: 1017000, area: 2790, alt: 70},
 ]
 
 let bar1 = new BarChart('div#bar1', 800, 500);
@@ -215,92 +215,92 @@ scatter1.render(citiesPop);
 <details>
 <summary><code>scatterPlot.js</code></summary>
 <pre><code class="language-javascript">export default class ScatterPlot {
-	// Attributes (you can make those private too)
-	width; height; margin; // Size
-	svg; plot; scatters;   // Selections
-	axisX; axisY;          // Axes
-	labelX; labelY;        // Labels
-	scaleX; scaleY;        // Scales
-	data;                  // Internal Data
+    // Attributes (you can make those private too)
+    width; height; margin; // Size
+    svg; plot; scatters;   // Selections
+    axisX; axisY;          // Axes
+    labelX; labelY;        // Labels
+    scaleX; scaleY;        // Scales
+    data;                  // Internal Data
 
-	// Constructor
-	constructor(container, width, height, margin) {
-		this.width = width;
-		this.height = height;
-		this.margin = margin;
+    // Constructor
+    constructor(container, width, height, margin) {
+        this.width = width;
+        this.height = height;
+        this.margin = margin;
 
-		this.svg = d3.select(container).append("svg")
-			.classed("scatterplot", true)
-			.attr("width", width).attr("height", height);
+        this.svg = d3.select(container).append("svg")
+            .classed("scatterplot", true)
+            .attr("width", width).attr("height", height);
 
-		this.plot = this.svg.append("g").attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
-		this.scatters = this.plot.selectAll("circle.scatter");
+        this.plot = this.svg.append("g").attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
+        this.scatters = this.plot.selectAll("circle.scatter");
 
-		// Axes
-		this.axisX = this.svg.append("g")
-			.attr("transform", `translate(${this.margin[2]}, ${this.height - this.margin[1]})`);
-		this.axisY = this.svg.append("g").attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
+        // Axes
+        this.axisX = this.svg.append("g")
+            .attr("transform", `translate(${this.margin[2]}, ${this.height - this.margin[1]})`);
+        this.axisY = this.svg.append("g").attr("transform", `translate(${this.margin[2]}, ${this.margin[0]})`);
 
-		// Labels
-		this.labelX = this.svg.append("text")
-			.attr("transform", `translate(${this.width / 2}, ${this.height})`)
-			.style("text-anchor", "middle").attr("dy", -5);
+        // Labels
+        this.labelX = this.svg.append("text")
+            .attr("transform", `translate(${this.width / 2}, ${this.height})`)
+            .style("text-anchor", "middle").attr("dy", -5);
 
-		this.labelY = this.svg.append("text")
-	}
+        this.labelY = this.svg.append("text")
+    }
 
-	#updateScales() {
-		let plotWidth = this.width - this.margin[2] - this.margin[3],
-			plotHeight = this.height - this.margin[0] - this.margin[1];
+    #updateScales() {
+        let plotWidth = this.width - this.margin[2] - this.margin[3],
+            plotHeight = this.height - this.margin[0] - this.margin[1];
 
-		let rangeX = [0, plotWidth],
-			rangeY = [plotHeight, 0];
+        let rangeX = [0, plotWidth],
+            rangeY = [plotHeight, 0];
 
-		let domainX = this.data.map((d) => d[0]),
-			domainY = [0, d3.max(this.data, (d) => d[1])];
+        let domainX = this.data.map((d) => d[0]),
+            domainY = [0, d3.max(this.data, (d) => d[1])];
 
-		this.scaleX = d3.scaleBand(domainX, rangeX).padding(0.2);
-		this.scaleY = d3.scaleLinear(domainY, rangeY).nice();
-	}
+        this.scaleX = d3.scaleBand(domainX, rangeX).padding(0.2);
+        this.scaleY = d3.scaleLinear(domainY, rangeY).nice();
+    }
 
-	#updateAxes() {
-		let axisGenX = d3.axisBottom(this.scaleX),
-			axisGenY = d3.axisLeft(this.scaleY);
+    #updateAxes() {
+        let axisGenX = d3.axisBottom(this.scaleX),
+            axisGenY = d3.axisLeft(this.scaleY);
 
-		this.axisX.call(axisGenX);
-		this.axisY.call(axisGenY);
-	}
+        this.axisX.call(axisGenX);
+        this.axisY.call(axisGenY);
+    }
 
-	// Private methods
-	// data is in the format [[key, value], ...]
-	#updateScatter() {
-		this.scatters = this.scatters
-			.data(this.data, (d) => d[0])
-			.join("circle")
-			.classed("scatter", true)
-			.attr("cx", (d) => this.scaleX(d[0]) + this.scaleX.bandwidth() / 2)
-			.attr("cy", (d) => this.height - this.margin[1] - this.scaleY(d[1]))
-			.attr("r", 8);
-	}
+    // Private methods
+    // data is in the format [[key, value], ...]
+    #updateScatter() {
+        this.scatters = this.scatters
+            .data(this.data, (d) => d[0])
+            .join("circle")
+            .classed("scatter", true)
+            .attr("cx", (d) => this.scaleX(d[0]) + this.scaleX.bandwidth() / 2)
+            .attr("cy", (d) => this.height - this.margin[1] - this.scaleY(d[1]))
+            .attr("r", 8);
+    }
 
-	// Public API
+    // Public API
 
-	// The dataset parameter needs to be in a generic format,
-	// so that it works for all future data
-	// here we assume a [[k, v], ...] format for efficiency
-	render(dataset) {
-		this.data = dataset;
-		this.#updateScales();
-		this.#updateScatter();
-		this.#updateAxes();
-		return this; // to allow chaining
-	}
+    // The dataset parameter needs to be in a generic format,
+    // so that it works for all future data
+    // here we assume a [[k, v], ...] format for efficiency
+    render(dataset) {
+        this.data = dataset;
+        this.#updateScales();
+        this.#updateScatter();
+        this.#updateAxes();
+        return this; // to allow chaining
+    }
 
-	setLabels(labelX = "categories", labelY = "values") {
-		this.labelX.text(labelX);
-		this.labelY.text(labelY);
-		return this; // to allow chaining
-	}
+    setLabels(labelX = "categories", labelY = "values") {
+        this.labelX.text(labelX);
+        this.labelY.text(labelY);
+        return this; // to allow chaining
+    }
 }
 </code></pre>
 </details>
@@ -308,17 +308,17 @@ scatter1.render(citiesPop);
 <details>
 <summary><code>scatterplot.css</code></summary>
 <pre><code class="language-css">svg.scatterplot {
-	fill: #3F94D3;
-	stroke: #003C71;
-	stroke-width: 2px;
-	border: 1px solid #121212;
+    fill: #3F94D3;
+    stroke: #003C71;
+    stroke-width: 2px;
+    border: 1px solid #121212;
 }
 
 text {
-	font-family: sans-serif;
-	font-size: 12px;
-	fill: #121212;
-	stroke: none;
+    font-family: sans-serif;
+    font-size: 12px;
+    fill: #121212;
+    stroke: none;
 }
 </code></pre>
 </details>
