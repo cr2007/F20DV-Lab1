@@ -12,7 +12,13 @@
 	"git.autofetch": true,
 	"diffEditor.ignoreTrimWhitespace": false,
 	"diffEditor.hideUnchangedRegions.enabled": true,
-	"audioCues.terminalCommandFailed": "on",
-	"audioCues.format": "userGesture",
-	"audioCues.save": "userGesture",
+	"accessibility.signals.terminalCommandFailed": {
+		"sound": "on"
+	},
+	"accessibility.signals.format": {
+		"sound": "userGesture"
+	},
+	"accessibility.signals.save": {
+		"sound": "userGesture"
+	},
 }
